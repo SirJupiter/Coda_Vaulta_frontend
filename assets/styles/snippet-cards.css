@@ -1,0 +1,84 @@
+@import 'https://unpkg.com/open-props';
+@import 'https://unpkg.com/open-props/normalize.min.css';
+
+.card-container {
+  --_spacer: var(--size-3);
+  display: grid;
+  gap: var(--_spacer);
+  grid-auto-flow: column;
+  grid-auto-columns: 21%;
+  padding: 0 var(--_spacer) var(--_spacer);
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  height: 100%;
+}
+
+.card-container--with-groups {
+  grid-auto-columns: 80%;
+}
+
+.card-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.card-container::-webkit-scrollbar-track {
+  background: #2e3440;
+}
+
+.card-container::-webkit-scrollbar-thumb {
+  background-color: #4c566a;
+  border-radius: 4px;
+  border: 2px solid transparent;
+}
+
+.media-group {
+  display: grid;
+  gap: var(--_spacer);
+  grid-auto-flow: column;
+}
+
+.card {
+  display: grid;
+  grid-template-rows: min-content;
+  align-content: end;
+  gap: var(--_spacer);
+  padding: var(--_spacer);
+  background: var(--surface-2);
+  border-radius: var(--radius-3);
+  box-shadow: var(--shadow-2);
+  cursor: pointer;
+
+  /* width: 300px; */
+}
+
+.inconsolata-text {
+  font-family: 'Inconsolata', monospace;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  font-variation-settings: 'wdth' 100;
+}
+
+.card-description {
+  font-size: 16px;
+}
+
+.card-created {
+  font-size: 14px;
+  font-style: italic;
+}
+
+/* .card > img {
+	inline-size: 100%;
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
+  } */
+
+.snaps-inline {
+  scroll-snap-type: inline mandatory;
+  scroll-padding-inline: var(--_spacer, 1rem);
+}
+
+.snaps-inline > * {
+  scroll-snap-align: start;
+}

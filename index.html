@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Save, organize, and share your code snippets effortlessly"
+    />
+    <meta
+      name="keywords"
+      content="code, snippet, programming, development, tech"
+    />
+    <script
+      src="https://kit.fontawesome.com/49b4249f6d.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/styles/styles.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="assets/styles/responsive.css"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="assets/styles/overlay.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="assets/styles/snippet-cards.css"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="assets/styles/del-modal.css" type="text/css" />
+    <link rel="stylesheet" href="assets/styles/prism.css" />
+    <link rel="icon" type="image/x-icon" href="cd.ico" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <script defer src="assets/scripts/init.js"></script>
+    <script defer src="assets/scripts/downloadScript.js"></script>
+    <script defer src="assets/scripts/prism.js"></script>
+    <title>Coda Vaulta | Home</title>
+  </head>
+  <body>
+    <div id="container-a">
+      <div id="inner-container">
+        <nav>
+          <div class="logo">
+            <img src="assets/images/CodaVaulta.png" alt="" />CodaVaulta
+          </div>
+          <div id="nav">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="#">How to use</a></li>
+              <li><a href="#">FAQs</a></li>
+              <li><a href="#">Pricing</a></li>
+            </ul>
+          </div>
+          <div>
+            <button class="btn register">Sign Up</button>
+            <button class="btn sign-in">Sign In</button>
+          </div>
+        </nav>
+
+        <!-- Text for showing welcome when a user is logged in -->
+        <div class="welcome-text"></div>
+
+        <header>
+          <div class="header-board">
+            <h4>Organize your code snippets securely, anytime, anywhere!</h4>
+            <p>
+              We ensure your code snippets are safe and accessible at all times
+            </p>
+            <button class="btn">Explore</button>
+          </div>
+
+          <!-- Single Snippet display board for when a user clicks on a snippet -->
+          <div class="snippet-display-board">
+            <div class="snippet-display">
+              <div class="snippet-display-header">
+                <h5></h5>
+              </div>
+              <div class="snippet-display-body">
+                <p class="snippet-desc"></p>
+                <p class="snippet-language .inconsolata-language"></p>
+                <pre><code></code></pre>
+              </div>
+              <div class="snippet-display-footer">
+                <div class="code-toolbar">
+                  <div class="toolbar">
+                    <div class="toolbar-item">
+                      <button class="btn edit">Edit</button>
+                    </div>
+                    <div class="toolbar-item">
+                      <button class="btn delete">Delete</button>
+                    </div>
+                    <div class="toolbar-item">
+                      <button class="btn download">Download</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="header-icon">
+            <i class="fa-sharp fa-regular fa-folder fa-10x"></i>
+          </div>
+
+          <!-- Form for creating snippet -->
+          <div class="create-snippet-form">
+            <form id="snippetForm">
+              <div class="input-bx">
+                <input
+                  type="text"
+                  name="title"
+                  placeholder="Snippet Title"
+                  required
+                />
+              </div>
+              <div class="input-bx">
+                <input
+                  type="text"
+                  name="description"
+                  placeholder="Snippet Description"
+                  maxlength="60"
+                />
+              </div>
+              <div class="input-bx">
+                <input
+                  type="text"
+                  name="language"
+                  placeholder="Code Language"
+                  required
+                />
+              </div>
+              <div class="input-bx">
+                <textarea
+                  name="code"
+                  placeholder="Enter your code snippet here"
+                  required
+                  rows="5"
+                  cols="25"
+                ></textarea>
+              </div>
+              <div class="input-bx">
+                <input type="submit" value="Create Snippet" />
+              </div>
+            </form>
+          </div>
+        </header>
+      </div>
+    </div>
+    <div id="container-b">
+      <section>
+        <div class="cards">
+          <div class="card-text">
+            <p>Active users</p>
+            <h4>1M+</h4>
+          </div>
+          <i class="fa-sharp fa-solid fa-user fa-6x"></i>
+        </div>
+        <div class="cards">
+          <div class="card-text">
+            <p>Snippets saved</p>
+            <h4>5TB+</h4>
+          </div>
+          <i class="fa-sharp fa-solid fa-code fa-6x"></i>
+        </div>
+        <div class="cards">
+          <div class="card-text">
+            <p>Snippets uploaded</p>
+            <h4>6M+</h4>
+          </div>
+          <i class="fa-solid fa-cloud-arrow-up fa-6x"></i>
+        </div>
+        <div class="cards">
+          <div class="card-text">
+            <p>Get started for free</p>
+            <h4>Live Demo</h4>
+          </div>
+          <i class="fa-sharp fa-solid fa-laptop fa-6x"></i>
+        </div>
+      </section>
+
+      <!-- Snippet section when user has logged in -->
+      <section id="snippetScroll">
+        <div class="card-container snaps-inline"></div>
+      </section>
+
+      <!-- Snippet section with no snippet display message -->
+      <section id="noSnippets">
+        <h5></h5>
+      </section>
+    </div>
+    <footer id="container-c">
+      <div class="footer">
+        <div><i class="fa-solid fa-code fa-2x"></i></div>
+        <div>
+          <h3>Profile</h3>
+          <p>My Snippets</p>
+          <p>Favourites</p>
+          <p>Settings</p>
+        </div>
+        <div>
+          <h3>Legal Information</h3>
+          <p>Privacy Settings</p>
+          <p>Terms of Use</p>
+          <p>Cookie Preferences</p>
+        </div>
+        <div>
+          <h3>Help Center</h3>
+          <p>Guidelines</p>
+          <p>Returns</p>
+          <p>Security and Payments</p>
+        </div>
+        <div class="footer-connect">
+          <h3>Connect</h3>
+          <div>
+            <a href="https://www.linkedin.com/in/tobiloba-adeleke-623866183"
+              ><i class="fa-brands fa-linkedin fa-2x"></i
+            ></a>
+            <a href="https://github.com/SirJupiter/"
+              ><i class="fa-brands fa-github fa-2x"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div id="inner-container">
+        <p class="copyright">Copyright &copy; CodaVaulta 2024</p>
+      </div>
+    </footer>
+
+    <!-- Overlay for signup -->
+    <div id="register-overlay">
+      <div class="drop">
+        <div class="content">
+          <form id="registerForm">
+            <h2>Sign Up</h2>
+            <div class="input-box">
+              <input
+                type="text"
+                placeholder="Firstname Lastname"
+                name="name"
+                autocomplete="on"
+                required
+              />
+            </div>
+            <div class="input-box">
+              <input
+                type="email"
+                placeholder="Email Address"
+                name="email"
+                autocomplete="on"
+                required
+              />
+            </div>
+            <div class="input-box">
+              <input
+                class="password1"
+                type="password"
+                placeholder="Password"
+                name="password"
+                autocomplete="on"
+                required
+              />
+              <i
+                class="toggle-password1 fa-sharp fa-solid fa-eye"
+                aria-hidden="true"
+              ></i>
+            </div>
+            <div class="input-box">
+              <button type="submit">Sign Up</button>
+            </div>
+            <!-- <button type="button" id="closeOverlay">Close</button> -->
+          </form>
+        </div>
+      </div>
+
+      <!-- Success drop -->
+      <div class="success">
+        <h3>Registration successful!</h3>
+      </div>
+    </div>
+
+    <!-- Overlay for sign in -->
+    <div id="sign-in-overlay">
+      <div class="in-drop">
+        <div class="in-content">
+          <form id="signInForm">
+            <h2>Sign In</h2>
+            <div class="in-input-box">
+              <input
+                type="email"
+                placeholder="Email Address"
+                name="email"
+                autocomplete="on"
+                required
+              />
+            </div>
+            <div class="in-input-box">
+              <input
+                class="password2"
+                type="password"
+                placeholder="Password"
+                name="password"
+                autocomplete="on"
+                required
+              />
+              <i
+                class="toggle-password2 fa-sharp fa-solid fa-eye"
+                aria-hidden="true"
+              ></i>
+            </div>
+            <div class="in-input-box">
+              <button type="submit">Sign In</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for Snippet delete confirmation -->
+    <div class="modalcontainer">
+      <div class="flex">
+        <div class="modal">
+          <div class="close"><span>&#43;</span></div>
+          <div class="content">
+            <h3>Delete snippet</h3>
+            <p>
+              Are you sure you want to delete this snippet? Snippets deleted
+              cannot be retrieved anymore after deletion. Please confirm.
+            </p>
+          </div>
+          <div class="buttons">
+            <a href="javascript:void(0);">Cancel</a>
+            <a href="javascript:void(0);">Delete</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for Snippet update form -->
+    <div class="updatecontainer">
+      <div class="flex">
+        <div class="updatemodal">
+          <div class="close"><span>&#43;</span></div>
+          <form id="updateSnippetForm">
+            <div class="content">
+              <h3>Update snippet</h3>
+              <p>
+                Update your snippet by providing the title, description,
+                language, or code. Please note that you cannot change the
+                language without providing a new code to match new language.
+              </p>
+              <div class="input-bx">
+                <input type="text" name="title" placeholder="Snippet Title" />
+              </div>
+              <div class="input-bx">
+                <input
+                  type="text"
+                  name="description"
+                  placeholder="Snippet Description"
+                  maxlength="60"
+                />
+              </div>
+              <div class="input-bx">
+                <input
+                  type="text"
+                  name="language"
+                  placeholder="Code Language"
+                />
+              </div>
+              <div class="input-bx">
+                <textarea
+                  name="code"
+                  placeholder="Enter your code snippet here"
+                ></textarea>
+              </div>
+            </div>
+            <div class="update-buttons">
+              <button type="button">Cancel</button>
+              <button type="submit">Update</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

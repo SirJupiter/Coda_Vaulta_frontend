@@ -1,0 +1,175 @@
+@media (max-width: 768px) {
+  #container-a {
+    margin: 10px auto 10px;
+  }
+
+  #inner-container {
+    padding: 0 1rem;
+  }
+
+  #container-a nav {
+    display: block;
+    margin-top: 0.8rem;
+    height: 3rem;
+  }
+
+  #container-a nav .logo {
+    font-size: 18px;
+    gap: 0.4rem;
+    margin: 1.3rem auto;
+  }
+
+  #container-a nav .logo img {
+    width: 30px;
+    height: 30px;
+  }
+
+  /* #container-a nav #nav {
+	margin: auto;
+  } */
+  #container-a nav #nav ul {
+    margin-left: -11rem;
+    text-align: center;
+  }
+
+  #container-a nav #nav ul li {
+    display: block;
+  }
+
+  #container-a nav #nav ul li a {
+    display: inline-block;
+  }
+
+  #container-a nav div:last-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem auto;
+    margin-left: -1rem;
+  }
+
+  #container-a header {
+    display: block;
+    margin: 11rem auto 0;
+    text-align: center;
+
+    .header-board {
+      max-width: 100%;
+      margin-bottom: 3rem;
+
+      h4 {
+        font-size: 30px;
+      }
+
+      p {
+        font-size: 16px;
+        margin-bottom: 2rem;
+      }
+    }
+
+    .header-icon {
+      display: none;
+    }
+  }
+
+  #container-b section {
+    display: block;
+    grid-template-columns: none;
+    gap: 0;
+
+    .cards {
+      height: 4rem;
+      padding: 1rem 3rem;
+      margin: 0.6rem 0;
+
+      .card-text {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        h4 {
+          font-size: 20px;
+          font-weight: bold;
+          color: var(--deeper-secondary-color);
+        }
+
+        p {
+          font-size: 16px;
+        }
+      }
+
+      i {
+        font-size: 20px;
+      }
+    }
+  }
+
+  .block-display {
+    display: block;
+  }
+
+  footer {
+    .footer > div > i {
+      visibility: hidden;
+    }
+
+    .footer {
+      /* justify-content: space-between; */
+      margin-right: 1.5rem;
+      p {
+        font-size: 13px;
+      }
+
+      .footer-connect i {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  /* Signup Overlay */
+  .drop,
+  .in-drop {
+    display: block;
+    width: 130px;
+    height: 70px;
+  }
+
+  .drop::before,
+  .in-drop::before {
+    /* opacity: 0; */
+    top: 0;
+    left: 0;
+    width: 25px;
+    height: 25px;
+  }
+
+  .drop::after,
+  .in-drop::after {
+    /* opacity: 0; */
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 2px;
+  }
+
+  .drop .content,
+  .in-drop .in-content {
+    display: block;
+    padding: 18px;
+  }
+
+  .drop .content #registerForm .input-box,
+  .in-drop .in-content #signInForm .in-input-box {
+    width: 60px;
+  }
+
+  .drop .content #registerForm .input-box input,
+  .in-drop .in-content #signInForm .in-input-box input {
+    width: 30px;
+  }
+}
+
+/* Remove Welcome <name> on Mobile Screen */
+#container-a .welcome-text {
+  display: none !important;
+}
