@@ -162,7 +162,7 @@ class App {
   handleInvalidToken() {
     localStorage.removeItem('username');
     localStorage.removeItem('authToken');
-    window.location.href = '/frontend/index.html';
+    window.location.href = '/index.html';
   }
 
   async checkTokenValidity() {
