@@ -1,7 +1,7 @@
 // const { options } = require('request');
 
 class App {
-  static #baseUrl = 'http://sirjupiter.pythonanywhere.com/coda_vaulta/api/';
+  static #baseUrl = 'https://sirjupiter.pythonanywhere.com/coda_vaulta/api/';
 
   constructor() {
     this.registerOverlay = document.getElementById('register-overlay');
