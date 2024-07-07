@@ -1,7 +1,7 @@
 // const { options } = require('request');
 
 class App {
-  static #baseUrl = 'http://127.0.0.1:5000/coda_vaulta/api/';
+  static #baseUrl = 'http://sirjupiter.pythonanywhere.com/coda_vaulta/api/';
 
   constructor() {
     this.registerOverlay = document.getElementById('register-overlay');
@@ -685,7 +685,7 @@ class App {
             this.displaySnippetsList(snippets);
             this.noSnippets.style.display = 'none';
           } else {
-            const message = `${this.username}, you have no snippets yet.`;
+            const message = `${this.username}, you have no snippets.`;
             this.displayNoSnippetsMessage(message);
           }
         })
